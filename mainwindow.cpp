@@ -61,8 +61,13 @@ void MainWindow::option_button_pressed(bool){
     questions = questions_history;
 
      }
+     ans_list = questions_options[counter].split(" ",QString::SkipEmptyParts);
+     vect_list = ans_list.toVector();
      ui->question_text->setText(questions[counter]);
      ui->question_options->setText(questions_options[counter]);
+     ui->answer_1_button->setText(vect_list[0]);
+     ui->answer_2_button->setText(vect_list[1]);
+     ui->answer_3_button->setText(vect_list[2]);
 }
 
 QString MainWindow::calc_score(){

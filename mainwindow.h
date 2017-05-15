@@ -43,6 +43,8 @@ private:
     int option;
     QString username = "hih";
     int counter = 0;
+    QStringList ans_list;
+    QVector<QString> vect_list;
     QVector<QString> questions = {"Who killed Arbaham Lincon? 1.J 2.asd 3. asd", "Who is he? 1. 2. 3. "};
     QVector<QString> questions_options;
     QVector<QString> questions_history = {"World War I began in which year?", "Adolf Hitler was born in which country?","John F. Kennedy was assassinated in","Which general famously stated 'I shall return'?","American involvement in the Korean War took place in which decade?","The Battle of Hastings in 1066 was fought in which country?","The Magna Carta was published by the King of which country?","The first successful printing press was developed by this man.","The first successful printing press was developed by this man.","The disease that ravaged and killed a third of Europe's population in the 14th century is known as","The Hundred Years War was fought between what two countries?"};
