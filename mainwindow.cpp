@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 
 void MainWindow::quiz_button_pressed(bool){
+    counter++;
     if(counter < questions.size()){
     ui->question_text->setText(questions[counter]);
     ui->question_options->setText(questions_options[counter]);
@@ -44,7 +45,7 @@ void MainWindow::quiz_button_pressed(bool){
 void MainWindow::option_button_pressed(bool){
 
 
-    ui->stackedWidget->setCurrentIndex(4);
+    ui->stackedWidget->setCurrentIndex(5);
 
     switch(option){
 
@@ -79,6 +80,23 @@ QString MainWindow::calc_score(){
         }
     }
     QString s = QString::number(score);
+
+    QFile file("scoreb.txt");
+
+    if (!file.exists()) {
+
+    }
+    if (!file.open(QIODevice::ReadWrite | QIODevice::Text)){
+        return s;
+    }
+
+
+
+    QTextStream out(&file);
+        out << username << "," << s;
+
+
+
     return s;
 
 }
@@ -103,7 +121,7 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_quiz_button_clicked()
 {
 
-    ui->stackedWidget->setCurrentIndex(3);
+    ui->stackedWidget->setCurrentIndex(4);
 
 
 }
@@ -112,17 +130,17 @@ void MainWindow::on_quiz_button_clicked()
 void MainWindow::on_answer_1_button_clicked()
 {
     answers.append("1");
-    counter++;
+
 }
 void MainWindow::on_answer_2_button_clicked()
 {
     answers.append("2");
-    counter++;
+
 }
 void MainWindow::on_answer_3_button_clicked()
 {
     answers.append("3");
-    counter++;
+
 }
 
 
@@ -142,4 +160,47 @@ void MainWindow::on_option_nature_clicked()
 void MainWindow::on_option_sports_clicked()
 {
     option = 3;
+}
+
+void MainWindow::on_scoreboard_button_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+    QFile file("scoreb.txt");
+
+    if (!file.exists()) {
+     ui->score_label_1->setText("buu");
+    }
+    if (!file.open(QIODevice::ReadWrite | QIODevice::Text)){
+        return;
+    }
+
+    QTextStream in(&file);
+       while (!in.atEnd()) {
+           scores.append(in.readLine());
+       }
+
+       score_2d.resize(2);
+       score_2d[0].resize(2);
+       ui->score_label_1->setText(scores[0]);
+      if(scores.count() > 0){
+     for(int i = 0; i < scores.size(); i++){
+         QVector<QString> holder;
+         QStringList list1 = scores[i].split(",");
+         holder = list1.toVector();
+         ui->score_label_2->setText(holder[0]);
+
+         score_2d[i][0].append(holder[0]);
+         score_2d[i][1].append(holder[1]);
+     }
+    // qSort(score_2d);
+     //ui->score_label_3->setText(score_2d[0][0]);
+       }
+
+
+
+}
+
+void MainWindow::on_result_gotomenu_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
 }

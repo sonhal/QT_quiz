@@ -31,7 +31,7 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>371</width>
+      <width>361</width>
       <height>271</height>
      </rect>
     </property>
@@ -42,7 +42,7 @@
      </size>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="start">
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -129,6 +129,13 @@
         </item>
        </layout>
       </item>
+      <item>
+       <widget class="QPushButton" name="result_gotomenu">
+        <property name="text">
+         <string>Go to menu</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
     <widget class="QWidget" name="menu">
@@ -168,7 +175,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="scoreboard_button">
         <property name="text">
          <string>Scoreboard</string>
         </property>
@@ -185,6 +192,77 @@
        <widget class="QPushButton" name="quit_button">
         <property name="text">
          <string>Quit</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="scoreboard">
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>Top 5 list:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="score_label_1">
+        <property name="text">
+         <string>1</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="score_label_2">
+        <property name="text">
+         <string>2</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="score_label_3">
+        <property name="text">
+         <string>3</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="score_label_4">
+        <property name="text">
+         <string>4</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="score_label_5">
+        <property name="text">
+         <string>5</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="scoreboard_gotomenu_button">
+        <property name="text">
+         <string>Go back</string>
         </property>
        </widget>
       </item>

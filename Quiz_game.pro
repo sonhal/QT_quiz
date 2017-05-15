@@ -34,3 +34,5 @@ FORMS    += mainwindow.ui
 
 DISTFILES += \
     qu.txt
+
+RESOURCES +=
